@@ -23,3 +23,36 @@
     text-shadow: 5px 6px 0 white;
   }
 }
+
+.ovProduct, .ovExtras, .ovDrinks{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+div.mainProduct{
+  font-family: var(--font-sans);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+  img{
+    width: 6rem;
+    height: 6rem;
+    object-fit: contain;
+  }
+}
+
+div.extraProduct{
+  font-family: var(--font-sans);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+  img{
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+  }
+}
