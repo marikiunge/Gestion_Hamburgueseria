@@ -3,14 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Anborgesa SL</title>
+    <!-- Favicon -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wdth,wght@75..100,400..700&family=Fredoka:wdth,wght@87.5..100,300..700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="sKit.css">
+    <link rel="stylesheet" href="layout.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main>
-        <div id="orderView"></div>
-        <div id="stateView"></div>
-        <div id="pickUpView"></div>
+        <div id="orderView">
+            <div class="ovHead">
+                <p>Pedido: </p>
+                <p id="orderNumber">001</p>
+            </div>
+            <div class="ovProduct"></div>
+            <div class="ovIngredients"></div>
+            <div class="ovExtras"></div>
+            <div class="ovDrinks"></div>
+            <div class="ovTicket"></div>
+        </div>
+        <div id="stateView">Area de estado</div>
+        <div id="pickUpView">Area de recogida</div>
     </main>
     <script src="script.js"></script>
 </body>

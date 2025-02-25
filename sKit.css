@@ -1,0 +1,11 @@
+:root{
+    --font-display: "DynaPuff", sans-serif;
+    --font-sans: "Fredoka", serif;
+
+    --font-size-xxl: 5rem;
+    --font-size-xl: 2rem;
+}
+
+p{
+    margin: 0;
+}

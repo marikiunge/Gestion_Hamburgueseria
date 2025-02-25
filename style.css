@@ -1,32 +1,25 @@
-body{
-  margin: 0;
-  background: linear-gradient(#00000050, #00000050), url(./resources/backdrop.jpg);
-}
+.ovHead{
+  background-color: #ffaa00;
+  color: #493102;
+  font-family: var(--font-display);
+  font-weight: 620;
+  
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: baseline;
+  gap: 6rem;
+  flex-wrap: wrap;
 
-main{
-  height: 100dvh;
-  width: min(55rem, 100dvw); 
-  margin: 0 auto;
+  p{
+    font-size: var(--font-size-xl);
+    text-shadow: 2px 3px 0 white;
+  }
 
-  display: grid;
-  grid-template-columns: 1fr 20rem;
-  grid-template-rows: 20rem 1fr;
-  grid-template-areas: 
-  "input output"
-  "input takeout";
-}
-
-#orderView{
-  grid-area: input;
-  background-color: white;
-}
-
-#stateView{
-  grid-area: output;
-  background-color: red;
-}
-
-#pickUpView{
-  grid-area: takeout;
-  background-color: blue;
+  p#orderNumber{
+    font-size: var(--font-size-xxl);  
+    text-shadow: 5px 6px 0 white;
+  }
 }

@@ -1,0 +1,58 @@
+body{
+  margin: 0;
+  background: linear-gradient(#00000050, #00000050), url(./resources/backdrop.jpg);
+}
+
+main{
+  height: 100dvh;
+  width: min(55rem, 100dvw); 
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 20rem;
+  grid-template-rows: 20rem 1fr;
+  grid-template-areas: 
+  "input output"
+  "input takeout";
+}
+
+#orderView{
+  grid-area: input;
+  background-color: white;
+  margin: 0.5rem;
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 8rem 1fr 1fr 1fr 1fr;
+    gap: 1em 1em;
+    grid-template-areas:
+      "head head"
+      "mainProduct mainProduct"
+      "ingredients ingredients"
+      "extras drinks"
+      "ticket ticket";
+
+  .ovHead { grid-area: head; }
+  .ovProduct { grid-area: mainProduct; }
+  .ovIngredients { grid-area: ingredients; }
+  .ovExtras { grid-area: extras; }
+  .ovDrinks { grid-area: drinks; }
+  .ovTicket { grid-area: ticket; }
+}
+
+#stateView{
+  grid-area: output;
+  background-color: white;
+  margin: 0.5rem;
+  border-radius: 8px;
+}
+
+#pickUpView{
+  grid-area: takeout;
+  background-color: white;
+  margin: 0.5rem;
+  border-radius: 8px;
+}
