@@ -1,0 +1,32 @@
+body{
+  margin: 0;
+  background: linear-gradient(#00000050, #00000050), url(./resources/backdrop.jpg);
+}
+
+main{
+  height: 100dvh;
+  width: min(55rem, 100dvw); 
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 20rem;
+  grid-template-rows: 20rem 1fr;
+  grid-template-areas: 
+  "input output"
+  "input takeout";
+}
+
+#orderView{
+  grid-area: input;
+  background-color: white;
+}
+
+#stateView{
+  grid-area: output;
+  background-color: red;
+}
+
+#pickUpView{
+  grid-area: takeout;
+  background-color: blue;
+}
