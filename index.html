@@ -24,7 +24,7 @@
                 <p id="orderNumber">001</p>
             </div>
             <div class="ovProduct">
-                <div class="mainProduct">
+                <div class="mainProduct"> 
                     <img src="./imgs/hamburguer.png" alt="Hamburguesa">
                     <p>5.00€</p>
                 </div>
@@ -37,7 +37,32 @@
                     <p>4.00€</p>
                 </div>
             </div>
-            <div class="ovIngredients"></div>
+            <div class="ovIngredients"> <!-- Hay que añadir las imágenes -->
+                <div class="extraProduct">
+                    <img src="./imgs/champiñon.png" alt="Champiñones">
+                    <p>0.50€</p>
+                </div>
+                <div class="extraProduct">
+                    <img src="./imgs/bacon.png" alt="Bacon">
+                    <p>0.50€</p>
+                </div>
+                <div class="extraProduct">
+                    <img src="./imgs/egg.png" alt="Huevo">
+                    <p>0.50€</p>
+                </div>
+                <div class="extraProduct">
+                    <img src="./imgs/cebolla.png" alt="Cebolla caramelizada">
+                    <p>0.50€</p>
+                </div>
+                <div class = "extraProduct">
+                    <img src="./imgs/jalapeño.png" alt="Jalapeños">
+                    <p>0.50€</p>
+                </div>
+                <div class="extraProduct">
+                    <img src="./imgs/mayonesa.png" alt="Mayonesa especial">
+                    <p>0.50€</p>
+                </div>
+            </div>
             <div class="ovExtras">
                 <div class="extraProduct">
                     <img src="./imgs/fries.png" alt="Patatas fritas">
@@ -67,6 +92,7 @@
                 </div>
             </div>
             <div class="ovTicket"></div>
+            <button id="orderButton" onclick="confirmOrder()">Realizar pedido</button>
         </div>
         <div id="stateView">Area de estado</div>
         <div id="pickUpView">Area de recogida</div>

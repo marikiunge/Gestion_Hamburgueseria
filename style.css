@@ -24,7 +24,7 @@
   }
 }
 
-.ovProduct, .ovExtras, .ovDrinks{
+.ovProduct, .ovExtras, .ovDrinks, .ovIngredients{
   display: flex;
   justify-content: space-evenly;
 }
@@ -54,5 +54,23 @@ div.extraProduct{
     width: 4rem;
     height: 4rem;
     object-fit: contain;
+  }
+}
+
+#orderButton{
+  background-color: #ffaa00;
+  color: #493102;
+  font-family: var(--font-display);
+  font-weight: 620;
+  font-size: var(--font-size-l);
+  padding: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover{
+    background-color: #493102;
+    color: #ffaa00;
   }
 }
