@@ -1,59 +1,111 @@
 :root{
-    --font-display: "DynaPuff", sans-serif;
-    --font-sans: "Fredoka", serif;
+  --font-display: "DynaPuff", sans-serif;
+  --font-sans: "Fredoka", serif;
 
-    --font-size-xxl: 5rem;
-    --font-size-xl: 2rem;
+  --font-size-xxl: 5rem;
+  --font-size-xl: 2rem;
+  --font-size-lg: 1.25rem;
 
-    --color-primary-lightest: #ffe9be;
-    --color-primary: #ffaa00;
+  --color-primary-lightest: #ffe9be;
+  --color-primary: #ffaa00;
+  --color-primary-darker: #493102;
 
-    --color-negative: #c11d00;
+  --color-negative: #c11d00;
 }
 
 p, h2, h3{
-    font-family: var(--font-sans);
-    margin: 0;
+  font-family: var(--font-sans);
+  margin: 0;
 }
 
 h2.vertical{
-    writing-mode: sideways-lr;
-    text-align: center;
-    text-orientation: sideways-right;
+  writing-mode: sideways-lr;
+  text-align: center;
+  text-orientation: sideways-right;
 }
 
 h3{
-    font-weight: 400;
-    font-size: 1rem;
-    margin-bottom: -1rem;
+  font-weight: 400;
+  font-size: 1rem;
 }
 
+/* ================ Components ================ */
 .stepper{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 8px;
-    gap: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+  gap: 4px;
 
-    border: black 1px solid;
-    border-radius: 2rem;
-    overflow: hidden;
+  border: black 1px solid;
+  border-radius: 4px;
+  overflow: hidden;
 
-    p{
-        font-weight: 500;
-        font-family: var(--font-sans);
+  p{
+    font-weight: 500;
+    font-family: var(--font-sans);
+  }
+
+  button{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    padding: 4px 8px;
+
+    &:hover{
+      background-color: var(--color-primary);
     }
+  }
+}
 
-    button{
-        background-color: transparent;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        font-family: var(--font-sans);
-        padding: 4px 8px;
+.ctaButton{
+  background-color: var(--color-primary);
+  color: var(--color-primary-darker);
+  font-family: var(--font-display);
+  font-size: var(--font-size-lg);
+  font-weight: 620;
+  height: 2.5rem;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.1s linear;
+  
+  &:hover{
+    background-color: var(--color-primary-darker);
+    color: var(--color-primary);
+  }
+}
 
-        &:hover{
-            background-color: var(--color-primary);
-        }
-    }
+.extraProduct{
+  font-family: var(--font-sans);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+  img{
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+  }
+}
+
+
+div.billPrice{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+
+  p:first-child{
+      font-family: var(--font-sans);
+  }
+
+  p:last-child{
+      text-align: right;
+      font-family: var(--font-sans);
+      font-size: var(--font-size-xl);
+  }
 }
