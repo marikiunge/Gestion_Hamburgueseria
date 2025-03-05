@@ -5,7 +5,7 @@ body{
 
 main{
   height: 100dvh;
-  width: min(55rem, 100dvw); 
+  width: min(60rem, 100dvw); 
   margin: 0 auto;
 
   display: grid;
@@ -26,12 +26,11 @@ main{
 
   display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 8rem 1fr 1fr 1fr 1fr;
+    grid-template-rows: 8rem 2.5fr 1fr 1fr;
     gap: 1em 1em;
     grid-template-areas:
       "head head"
-      "mainProduct mainProduct"
-      "ingredients ingredients"
+      "mainProduct ingredients"
       "extras drinks"
       "ticket ticket";
 

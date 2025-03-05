@@ -4,8 +4,16 @@
 
     --font-size-xxl: 5rem;
     --font-size-xl: 2rem;
+
+    --color-primary: #ffaa00;
 }
 
-p{
+p, h2, h3{
+    font-family: var(--font-sans);
     margin: 0;
+}
+
+h3{
+    font-weight: 400;
+    font-size: 0.9rem;
 }
