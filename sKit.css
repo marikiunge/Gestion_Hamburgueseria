@@ -5,7 +5,10 @@
     --font-size-xxl: 5rem;
     --font-size-xl: 2rem;
 
+    --color-primary-lightest: #ffe9be;
     --color-primary: #ffaa00;
+
+    --color-negative: #c11d00;
 }
 
 p, h2, h3{
@@ -13,7 +16,44 @@ p, h2, h3{
     margin: 0;
 }
 
+h2.vertical{
+    writing-mode: sideways-lr;
+    text-align: center;
+    text-orientation: sideways-right;
+}
+
 h3{
     font-weight: 400;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    margin-bottom: -1rem;
+}
+
+.stepper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8px;
+    gap: 4px;
+
+    border: black 1px solid;
+    border-radius: 2rem;
+    overflow: hidden;
+
+    p{
+        font-weight: 500;
+        font-family: var(--font-sans);
+    }
+
+    button{
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font-family: var(--font-sans);
+        padding: 4px 8px;
+
+        &:hover{
+            background-color: var(--color-primary);
+        }
+    }
 }

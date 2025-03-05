@@ -43,15 +43,15 @@
                 <h3>Originales</h3>
                 <div id="originalIngredients">
                     <img src="./imgs/mushroom.png" alt="Champiñones">
-                    <img src="./imgs/bacon.webp" alt="Bacon">
-                    <img src="./imgs/friedegg.png" alt="Huevo">
-                    <img src="./imgs/caramonion.png" alt="Cebolla caramelizada">
-                    <img src="./imgs/jalapeno.png" alt="Jalapeños">
+                    <img class="selected" src="./imgs/bacon.webp" alt="Bacon">
+                    <img class="selected" src="./imgs/friedegg.png" alt="Huevo">
+                    <img class="removed" src="./imgs/caramonion.png" alt="Cebolla caramelizada">
+                    <img class="selected" src="./imgs/jalapeno.png" alt="Jalapeños">
                 </div>
                 <h3>Extra (+0.50)</h3>
                 <div id="additionalIngredients">
                     <img src="./imgs/mushroom.png" alt="Champiñones">
-                    <img src="./imgs/bacon.webp" alt="Bacon">
+                    <img class="selected" src="./imgs/bacon.webp" alt="Bacon">
                     <img src="./imgs/friedegg.png" alt="Huevo">
                     <img src="./imgs/caramonion.png" alt="Cebolla caramelizada">
                     <img src="./imgs/jalapeno.png" alt="Jalapeños">
@@ -59,39 +59,75 @@
                 </div>
             </div>
             <div class="ovExtras">
+                <h2 class="vertical">Extras</h2>
                 <div class="extraProduct">
                     <img src="./imgs/fries.png" alt="Patatas fritas">
                     <p>2.00€</p>
+                    <div class="stepper">
+                        <button>-</button>
+                        <p>0</p>
+                        <button>+</button>
+                    </div>
                 </div>
                 <div class="extraProduct">
                     <img src="./imgs/salad.webp" alt="Ensalada">
                     <p>1.50€</p>
+                    <div class="stepper">
+                        <button>-</button>
+                        <p>0</p>
+                        <button>+</button>
+                    </div>
                 </div>
                 <div class="extraProduct">
                     <img src="./imgs/onionrings.jpg" alt="Aros de cebolla">
                     <p>2.50€</p>
+                    <div class="stepper">
+                        <button>-</button>
+                        <p>0</p>
+                        <button>+</button>
+                    </div>
                 </div>
             </div>
             <div class="ovDrinks">
+                <h2 class="vertical">Bebidas</h2>
                 <div class="extraProduct">
                     <img src="./imgs/waterbottle.png" alt="Agua">
                     <p>1.00€</p>
+                    <div class="stepper">
+                        <button>-</button>
+                        <p>0</p>
+                        <button>+</button>
+                    </div>
                 </div>
                 <div class="extraProduct">
                     <img src="./imgs/coke.webp" alt="Coca cola">
                     <p>1.50€</p>
+                    <div class="stepper">
+                        <button>-</button>
+                        <p>0</p>
+                        <button>+</button>
+                    </div>
                 </div>
                 <div class="extraProduct">
                     <img src="./imgs/beer.png" alt="Cerveza">
                     <p>2.00€</p>
+                    <div class="stepper">
+                        <button>-</button>
+                        <p>0</p>
+                        <button>+</button>
+                    </div>
                 </div>
             </div>
-            <div class="ovTicket"></div>
-            <button id="orderButton" onclick="confirmOrder()">Realizar pedido</button>
+            <div class="ovTicket">
+                <button id="orderButton" onclick="confirmOrder()">Realizar pedido</button>
+            </div>
         </div>
         <div id="stateView">Area de estado</div>
         <div id="pickUpView">Area de recogida</div>
     </main>
+
     <script src="script.js"></script>
+    <script src="backend.js"></script>
+    <script src="frontend.js"></script>
 </body>
 </html>

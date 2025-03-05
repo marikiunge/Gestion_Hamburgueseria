@@ -25,14 +25,15 @@ main{
   /*overflow: hidden;*/
 
   display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 8rem 2.5fr 1fr 1fr;
-    gap: 1em 1em;
+    grid-template-columns: 1fr 6rem 17rem;
+    grid-template-rows: 8rem 2fr 1fr 1fr;
+    gap: 8px 8px;
+    padding: 8px;
     grid-template-areas:
-      "head head"
-      "mainProduct ingredients"
-      "extras drinks"
-      "ticket ticket";
+      "head head head"
+      "mainProduct ingredients ingredients"
+      "extras extras ticket"
+      "drinks drinks ticket";
 
   .ovHead { grid-area: head; }
   .ovProduct { grid-area: mainProduct; }
