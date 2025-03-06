@@ -14,7 +14,8 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="sKit.css">
     <link rel="stylesheet" href="layout.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="orderPanel.css">
+    <link rel="stylesheet" href="orderDisplays.css">
 </head>
 <body>
     <main>
@@ -152,8 +153,26 @@
                 </div>
             </div>
         </div>
-        <div id="stateView">Area de estado</div>
-        <div id="pickUpView">Area de recogida</div>
+        <div id="stateView">
+            <div class="displayTitle"><h2>Pedidos</h2></div>
+            <table>
+                <tr class="ready">
+                    <td>013</td>
+                    <td><button>¡Recoger!</button></td>
+                </tr>
+                <tr>
+                    <td>014</td>
+                    <td>02:35</td>
+                </tr>
+                <tr>
+                    <td>015</td>
+                    <td>04:12</td>
+                </tr>
+            </table>
+        </div>
+        <div id="pickUpView">
+            <div class="displayTitle"><h2>Area de recogida</h2></div>
+        </div>
     </main>
 
     <script src="script.js"></script>

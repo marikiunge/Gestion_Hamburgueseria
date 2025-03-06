@@ -89,6 +89,7 @@ div.ovIngredients{
       
       &:hover{
         background-color: var(--color-primary);
+        filter: drop-shadow(0 0px 4px #00000089) !important;
       }
 
       &.selected{
