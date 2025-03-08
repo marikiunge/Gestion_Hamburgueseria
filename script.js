@@ -1,5 +1,6 @@
+/*
 // Definimos los productos y sus precios
-const products = [
+const oldProducts = [
     { name: "Hamburguesa", price: 5.00, baseIngredients: ["Pan", "Carne", "Lechuga", "Tomate", "Queso"] },
     { name: "Perrito caliente", price: 3.50, baseIngredients: ["Pan", "Salchicha", "Ketchup", "Mostaza"] },
     { name: "Sandwich", price: 4.00, baseIngredients: ["Pan", "Jamón", "Queso", "Tomate"] }
@@ -14,7 +15,7 @@ const ingredients = [
     { name: "Mayonesa especial", price: 0.50 }
 ];
 
-const baseIngredients = [
+const oldIngredients = [
     { name: "Tomate" },
     { name: "Queso" },
     { name: "Lechuga" },
@@ -31,6 +32,7 @@ const extras = [
     { name: "Cerveza", price: 2.00 }
 ];
 
+
 // Obtenemos el último número de pedido del almacenamiento local
 let lastOrder = localStorage.getItem("lastOrder");
 let orderNumber = lastOrder ? parseInt(lastOrder) + 1 : 1; // Si no hay pedidos, el número de pedido es 1
@@ -44,6 +46,7 @@ let order = {
 
 // Actualiza el número de pedido en la interfaz
 document.getElementById("orderNumber").innerText = String(order.number).padStart(3, "0");
+
 
 // Función para agregar un producto al pedido
 function addProduct(product) {
@@ -59,6 +62,7 @@ function addProduct(product) {
     updateTotal();
     localStorage.setItem("lastOrder", order.number);
 }
+
 
 // Función para agregar o quitar ingredientes de un producto
 function toggleExtra(productName, extraName, extraPrice) {
@@ -105,6 +109,7 @@ function toggleBaseIngredient(productName, ingredientName) {
         }
     }
 }
+
 
 // Función para cambiar la cantidad de un extra
 function updateExtra(extraName, quantity) {
@@ -326,3 +331,4 @@ for (let i = 0; i < extraElements.length; i++) {
 
 // Manejador de evento para el botón de "Realizar pedido"
 document.querySelector(".ctaButton").addEventListener("click", confirmOrder);
+*/

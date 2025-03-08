@@ -1,0 +1,1 @@
+document.getElementById("orderNumber").innerText = String(order.number).padStart(3, "0");

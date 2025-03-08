@@ -5,12 +5,13 @@ div#stateView, div#pickUpView{
 div#stateView{
     table{
         width: 100%;
-        font-family: var(--font-display);
+        font-family: var(--font-sans);
         font-size: 2rem;
+        font-weight: 500;
         margin-top: 1rem;
         border: none;
         border-collapse: collapse;
-
+        
         tr.ready{
             background-color: var(--color-primary-lightest);
             border-radius: 4px;
