@@ -27,8 +27,13 @@ ticket = document.querySelector('.ovTicket table')
             img.onclick = function() { toggleIngredient(this) }
             ogIngredientsDisplay.appendChild(img)
         }
+
         document.querySelectorAll('#additionalIngredients img').forEach (
             img => img.classList.remove('selected')
+        )
+
+        document.querySelectorAll('.stepper p').forEach (
+            p => p.innerHTML = 0
         )
     }
 
@@ -42,9 +47,18 @@ ticket = document.querySelector('.ovTicket table')
         }
     }
 
-// FOR EACH EXTRA PRODUCT (BOTH EXTRAS AND DRINKS) ADD LISTENERS
-// TO UP AND DOWN THE STEPPER
+    document.querySelectorAll('.stepper').forEach(stepper => {
+        let buttons = stepper.querySelectorAll('button')
+        buttons[0].addEventListener('click', function() { manageStepper(this, false) })
+        buttons[1].addEventListener('click', function() { manageStepper(this, true) })
+    })
 
-// FOR EACH INGREDIENT ADD EVENT LISTENERS
+    function manageStepper(which, increasing) {
+        let node = which.parentNode.querySelector('p')
+        let value = parseInt(node.innerHTML)
 
-// FOR EACH EXTRA INGREDIENT ADD EVENT LISTENERS
+        if (increasing) value = Math.min(value + 1, 50)
+        else value = Math.max(value - 1, 0)
+
+        node.innerHTML = value
+    }
