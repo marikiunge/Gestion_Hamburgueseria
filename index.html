@@ -26,15 +26,15 @@
             </div>
             <div class="ovProduct">
                 <!-- <h2>Plato principal</h2> -->
-                <div> 
+                <div onclick="selectMain('burger', 0)"> 
                     <img src="./imgs/hamburguer.png" alt="Hamburguesa">
                     <p>5.00€</p>
                 </div>
-                <div>
+                <div onclick="selectMain('hotdog', 1)">
                     <img src="./imgs/hotdog.webp" alt="Perrito caliente">
                     <p>3.50€</p>
                 </div>
-                <div>
+                <div onclick="selectMain('sandwich', 2)">
                     <img src="./imgs/sandwich.jpg" alt="Sandwich">
                     <p>4.00€</p>
                 </div>
@@ -42,22 +42,16 @@
             <div class="ovIngredients">
                 <h2>Ingredientes</h2>
                 <h3>Originales</h3>
-                <div id="originalIngredients">
-                    <img class="selected"src="./imgs/tomato.png" alt="Tomate">
-                    <img class="selected" src="./imgs/cheese.png" alt="Queso">
-                    <img class="selected" src="./imgs/lettuce.jpg" alt="Lechuga">
-                    <img class="selected" src="./imgs/mustard.webp" alt="Mostaza">
-                    <img class="selected" src="./imgs/ketchup.png" alt="Ketchup">
-                </div>
+                <div id="originalIngredients"></div>
                 <hr>
                 <h3>Extra (+0.50)</h3>
                 <div id="additionalIngredients">
-                    <img src="./imgs/mushroom.png" alt="Champiñones">
-                    <img src="./imgs/bacon.webp" alt="Bacon">
-                    <img src="./imgs/friedegg.png" alt="Huevo">
-                    <img src="./imgs/caramonion.png" alt="Cebolla caramelizada">
-                    <img src="./imgs/jalapeno.png" alt="Jalapeños">
-                    <img src="./imgs/mayo.png" alt="Mayonesa especial">
+                    <img src="./imgs/mushroom.png" alt="Champiñones" onclick="toggleIngredient(this, true)">
+                    <img src="./imgs/bacon.webp" alt="Bacon" onclick="toggleIngredient(this, true)">
+                    <img src="./imgs/friedegg.png" alt="Huevo" onclick="toggleIngredient(this, true)">
+                    <img src="./imgs/caramonion.png" alt="Cebolla caramelizada" onclick="toggleIngredient(this, true)">
+                    <img src="./imgs/jalapeno.png" alt="Jalapeños" onclick="toggleIngredient(this, true)">
+                    <img src="./imgs/mayo.png" alt="Mayonesa especial" onclick="toggleIngredient(this, true)">
                 </div>
             </div>
             <div class="ovExtras">
@@ -121,28 +115,9 @@
                 </div>
             </div>
             <div class="ovTicket">
-                <center>
-                    <h2>Ticket</h2>
-                </center>
+                <h2 style="text-align: center;">Ticket</h2>
                 <div>
-                    <table>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </table>
+                    <table></table>
                 </div>
                 <div>
                     <div class="billPrice">
@@ -155,28 +130,15 @@
         </div>
         <div id="stateView">
             <div class="displayTitle"><h2>Pedidos</h2></div>
-            <table>
-                <tr class="ready">
-                    <td>013</td>
-                    <td><button>¡Recoger!</button></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
+            <table></table>
         </div>
         <div id="pickUpView">
             <div class="displayTitle"><h2>Area de recogida</h2></div>
         </div>
     </main>
 
-    <script src="script.js"></script>
     <script src="backend.js"></script>
     <script src="frontend.js"></script>
+    <script src="storage.js"></script>
 </body>
 </html>

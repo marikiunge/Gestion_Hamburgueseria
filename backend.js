@@ -17,9 +17,10 @@ function Order() {
     this.total = 0
 }
 
-const localStorage = {
+const storage = {
     read() {
-        let savedCount = localStorage.getItem("orderCount");
+        // LOCALSTORAGE IS NOT A FUNCTION ????
+        let savedCount = localStorage.getItem('orderCount');
         data.orderCount = savedCount ? parseInt(savedCount.orderCount) : 0;
     },
 
@@ -29,6 +30,6 @@ const localStorage = {
 }
 
 window.onload = function() {
-    localStorage.read()
+    storage.read()
     data.newOrder()
 };

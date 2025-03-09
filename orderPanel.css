@@ -55,7 +55,7 @@ div.ovProduct{
       object-fit: contain;
     }
 
-    &:hover{
+    &:hover, &.selected{
       background-color: var(--color-primary);
     }
   }
