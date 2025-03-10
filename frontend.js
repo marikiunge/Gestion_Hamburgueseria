@@ -1,6 +1,7 @@
 const
 ogIngredientsDisplay = document.getElementById('originalIngredients'),
 progressList = document.querySelector('#stateView table'),
+pvPanel = document.querySelector('.pvFull'),
 ticket = document.querySelector('.ovTicket table')
 
 
@@ -198,4 +199,129 @@ function clearSelections(){
     // Ticket
     drawTicket()
 
+}
+
+
+function drawPickUp(order){
+    let object = data.orderHistory[order]
+
+    // Order number
+        pvPanel.innerHTML = ''
+        let p = document.createElement('p')
+        p.className = 'pvOrder'
+        p.innerText = 'Pedido ' + (String(object.id+1).padStart(3, '0'))
+        pvPanel.appendChild(p)
+        let hr = document.createElement('hr')
+        pvPanel.appendChild(hr)
+
+    // Main product
+        let pvMain = document.createElement('div')
+        pvMain.className = 'pvMain'
+        let pvMainImg = document.createElement('img')
+        pvMainImg.className = 'pvMainImg'
+        pvMainImg.src = products[object.mainProduct].src
+        let pvAll = document.createElement('div')
+
+        // Removed ingredients
+            let indiv1 = document.createElement('div')
+            let id1P = document.createElement('p')
+            indiv1.appendChild(id1P)
+            if (object.eliminatedIngredients.length > 0) {
+                id1P.innerText = 'Sin: '
+                object.eliminatedIngredients.forEach(item => {
+                    let img = document.createElement('img')
+                    img.src = baseIngredients[item].src
+                    indiv1.appendChild(img)
+                });    
+            } else {
+                id1P.innerText = 'Con todo'
+            }
+            
+        // Extra ingredients
+            let indiv2 = document.createElement('div')
+            let id2P = document.createElement('p')
+            indiv2.appendChild(id2P)
+            if (object.extraIngredients.length > 0) {
+                id2P.innerText = 'Extra: '
+                object.extraIngredients.forEach(item => {
+                    let img = document.createElement('img')
+                    img.src = extraIngredients[item].src
+                    indiv2.appendChild(img)
+                });
+            } else {
+                id2P.innerText = 'Sin extras'
+            }
+
+        // Total price
+            let mainP = document.createElement('p')
+            mainP.className = 'pvMainPrice'
+            mainP.innerText = (
+                (products[object.mainProduct].price/100) + (0.5 * object.extraIngredients.length)
+            ).toFixed(2) + '€'
+
+    pvAll.appendChild(indiv1)
+    pvAll.appendChild(indiv2)
+    pvAll.appendChild(mainP)
+    pvMain.appendChild(pvMainImg)
+    pvMain.appendChild(pvAll)
+    pvPanel.appendChild(pvMain)
+
+    let hr2 = document.createElement('hr')
+    pvPanel.appendChild(hr2)
+
+    // Extras
+    let table = document.createElement('table')
+    for (key in object.extras) {
+        if (object.extras[key] > 0){
+            let tr = document.createElement('tr')
+            let tdImg = document.createElement('td')
+            let tdName = document.createElement('td')
+            let tdPrice = document.createElement('td')
+
+            let img = document.createElement('img')
+            img.src = extras[key].src
+            tdImg.appendChild(img)
+
+            tdName.innerText = object.extras[key] + 'x ' + extras[key].alt  
+
+            tdPrice.innerText = (extras[key].price / 100 * object.extras[key]).toFixed(2) + '€'
+
+            tr.appendChild(tdImg)
+            tr.appendChild(tdName)
+            tr.appendChild(tdPrice)
+            table.appendChild(tr)
+        }
+    }
+
+    if (table.querySelectorAll('tr').length === 0) {
+        let tr = document.createElement('tr')
+        let td = document.createElement('td')
+        td.colSpan = 3
+        td.style.textAlign = 'center'
+        td.innerText = 'Sin extras ni bebida'
+        tr.appendChild(td)
+        table.appendChild(tr)
+    }
+
+    pvPanel.appendChild(table)
+
+    // Price and button
+    let hr3 = document.createElement('hr')
+    pvPanel.appendChild(hr3)
+
+    let pvPrice = document.createElement('div')
+    pvPrice.className = 'pvPrice'
+    let pvpP = document.createElement('p')
+    pvpP.innerText = (object.total/100).toFixed(2) + '€'
+    let pvpB = document.createElement('button')
+    pvpB.onclick = clearPickUp
+    pvpB.innerText = 'Listo!'
+
+    pvPrice.appendChild(pvpP)
+    pvPrice.appendChild(pvpB)
+    pvPanel.appendChild(pvPrice)
+}
+
+function clearPickUp() {
+    pvPanel.innerHTML = ''
 }

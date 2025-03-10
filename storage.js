@@ -2,17 +2,20 @@ const products = {
     burger: {
         name: 'Hamburgesa',
         price: 500,
-        ingredients: ['burgerBread', 'burgerMeat', 'lettuce', 'tomato', 'cheese']
+        ingredients: ['burgerBread', 'burgerMeat', 'lettuce', 'tomato', 'cheese'],
+        src: './imgs/hamburguer.png'
     },
     hotdog: {
-        name: 'Hot Dog',
+        name: 'Perrito caliente',
         price: 350,
-        ingredients: ['hotdogBread', 'sausage', 'ketchup', 'mustard']
+        ingredients: ['hotdogBread', 'sausage', 'ketchup', 'mustard'],
+        src: './imgs/hotdog.webp'
     },
     sandwich: {
         name: 'Sandwich',
         price: 400,
-        ingredients: ['sandwichBread', 'ham', 'lettuce', 'tomato', 'cheese']
+        ingredients: ['sandwichBread', 'ham', 'lettuce', 'tomato', 'cheese'],
+        src: './imgs/sandwich.jpg'
     }
 }
 
@@ -92,26 +95,32 @@ const extraIngredients = {
 
 const extras = {
     fries: {
+        src: './imgs/fries.png',
         price: 200,
         alt: 'Patatas fritas'
     },
     salad: {
+        src: './imgs/salad.webp',
         price: 150,
         alt: 'Ensalada'
     },
     rings: {
+        src: './imgs/onionrings.jpg',
         price: 250, 
         alt: 'Aros de cebolla' 
     },
     water: {
+        src: './imgs/waterbottle.png',
         price: 100,
         alt: 'Botella de agua'
     },
     coke: {
+        src: './imgs/coke.webp',
         price: 150,
         alt: 'Coca Cola'
     },
     beer: {
+        src: './imgs/beer.png',
         price: 200,
         alt: 'Cerverza'
     }

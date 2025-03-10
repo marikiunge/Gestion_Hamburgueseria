@@ -10,13 +10,15 @@ const data = {
 
     makeOrder() {
         if(data.currentOrder.mainProduct == null) return
+        data.currentOrder.total = parseInt(document.querySelector('.billPrice span').innerText.replace('€', ''))*100
         let order = structuredClone(data.currentOrder)
         data.orderHistory.push(order)
         timer.start(data.orderCount, timer.getOrderTimer())
-        drawTicket()
         clearSelections()
         data.orderCount++
         data.newOrder()
+        drawTicket()
+        storage.write()
     }
 }
 
@@ -82,6 +84,7 @@ const timer = {
 function pickUpOrder(order){
     let index = timer.activeTimers.findIndex(array => array[0] == order);
     timer.activeTimers.splice(index, 1);
+    drawPickUp(order)
     timer.draw();
 }
 
@@ -103,13 +106,16 @@ function Order() {
 
 const storage = {
     read() {
-        // LOCALSTORAGE IS NOT A FUNCTION ????
-        let savedCount = localStorage.getItem('orderCount');
-        data.orderCount = savedCount ? parseInt(savedCount.orderCount) : 0;
+        let receivedData = JSON.parse(localStorage.getItem('data'));
+        if (receivedData == null) {
+            data.orderCount = 0
+        } else {
+            data.orderCount = receivedData.orderCount;
+        }
     },
 
     write() {
-        localStorage.setItem("orderCount", data.orderCount);
+        localStorage.setItem('data', JSON.stringify(data));
     }
 }
 

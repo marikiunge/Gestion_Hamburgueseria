@@ -3,6 +3,11 @@ div#stateView, div#pickUpView{
 }
 
 div#stateView{
+  div.tableDiv{
+    height: calc(100% - 4.2rem);
+    overflow-y: scroll;
+  }
+
   table{
     width: 100%;
     font-family: var(--font-sans);
@@ -92,13 +97,15 @@ div#pickUpView{
 
       > div{
         display: flex;
-        gap: 8px;
+        gap: 0 8px;
+        max-width: 7rem;
+        flex-wrap: wrap;
       }
     }
 
     .pvMainPrice{
       text-align: right;
-      margin-top: -2rem;
+      margin-top: -1rem;
       font-size: 1.5rem;
     }
 
@@ -112,7 +119,7 @@ div#pickUpView{
     width: 100%;
 
     img{
-      width: 14px;
+      width: 16px;
     }
 
     td{
