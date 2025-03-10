@@ -46,12 +46,12 @@
                 <hr>
                 <h3>Extra (+0.50)</h3>
                 <div id="additionalIngredients">
-                    <img src="./imgs/mushroom.png" alt="Champiñones" onclick="toggleIngredient(this, true)">
-                    <img src="./imgs/bacon.webp" alt="Bacon" onclick="toggleIngredient(this, true)">
-                    <img src="./imgs/friedegg.png" alt="Huevo" onclick="toggleIngredient(this, true)">
-                    <img src="./imgs/caramonion.png" alt="Cebolla caramelizada" onclick="toggleIngredient(this, true)">
-                    <img src="./imgs/jalapeno.png" alt="Jalapeños" onclick="toggleIngredient(this, true)">
-                    <img src="./imgs/mayo.png" alt="Mayonesa especial" onclick="toggleIngredient(this, true)">
+                    <img id="extraIng_mushrooms" src="./imgs/mushroom.png" alt="Champiñones" onclick="toggleIngredient(this, true)">
+                    <img id="extraIng_bacon" src="./imgs/bacon.webp" alt="Bacon" onclick="toggleIngredient(this, true)">
+                    <img id="extraIng_friedEgg" src="./imgs/friedegg.png" alt="Huevo" onclick="toggleIngredient(this, true)">
+                    <img id="extraIng_caramonion" src="./imgs/caramonion.png" alt="Cebolla caramelizada" onclick="toggleIngredient(this, true)">
+                    <img id="extraIng_jalapeno" src="./imgs/jalapeno.png" alt="Jalapeños" onclick="toggleIngredient(this, true)">
+                    <img id="extraIng_mayo" src="./imgs/mayo.png" alt="Mayonesa especial" onclick="toggleIngredient(this, true)">
                 </div>
             </div>
             <div class="ovExtras">
@@ -59,7 +59,7 @@
                 <div class="extraProduct">
                     <img src="./imgs/fries.png" alt="Patatas fritas">
                     <p>2.00€</p>
-                    <div class="stepper">
+                    <div class="stepper" id="step_fries">
                         <button>-</button>
                         <p>0</p>
                         <button>+</button>
@@ -68,7 +68,7 @@
                 <div class="extraProduct">
                     <img src="./imgs/salad.webp" alt="Ensalada">
                     <p>1.50€</p>
-                    <div class="stepper">
+                    <div class="stepper" id="step_salad">
                         <button>-</button>
                         <p>0</p>
                         <button>+</button>
@@ -77,7 +77,7 @@
                 <div class="extraProduct">
                     <img src="./imgs/onionrings.jpg" alt="Aros de cebolla">
                     <p>2.50€</p>
-                    <div class="stepper">
+                    <div class="stepper" id="step_rings">
                         <button>-</button>
                         <p>0</p>
                         <button>+</button>
@@ -89,7 +89,7 @@
                 <div class="extraProduct">
                     <img src="./imgs/waterbottle.png" alt="Agua">
                     <p>1.00€</p>
-                    <div class="stepper">
+                    <div class="stepper" id="step_water">
                         <button>-</button>
                         <p>0</p>
                         <button>+</button>
@@ -98,7 +98,7 @@
                 <div class="extraProduct">
                     <img src="./imgs/coke.webp" alt="Coca cola">
                     <p>1.50€</p>
-                    <div class="stepper">
+                    <div class="stepper" id="step_coke">
                         <button>-</button>
                         <p>0</p>
                         <button>+</button>
@@ -107,7 +107,7 @@
                 <div class="extraProduct">
                     <img src="./imgs/beer.png" alt="Cerveza">
                     <p>2.00€</p>
-                    <div class="stepper">
+                    <div class="stepper" id="step_beer">
                         <button>-</button>
                         <p>0</p>
                         <button>+</button>
@@ -122,7 +122,7 @@
                 <div>
                     <div class="billPrice">
                         <p>Total:</p>
-                        <p class="billPrice"></p>
+                        <p class="billPrice"><span>0.00</span>€</p>
                     </div>
                     <button class="ctaButton" onclick="confirmOrder()">Realizar pedido</button>
                 </div>

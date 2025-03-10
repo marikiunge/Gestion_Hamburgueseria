@@ -12,8 +12,16 @@ const data = {
 function Order() { 
     this.id = data.orderCount
     this.mainProduct = null
-    this.ingredients = []
-    this.extras = []
+    this.eliminatedIngredients = []
+    this.extraIngredients = []
+    this.extras = {
+        fries: 0,
+        salad: 0,
+        rings: 0,
+        water: 0,
+        coke: 0,
+        beer: 0,
+    }
     this.total = 0
 }
 

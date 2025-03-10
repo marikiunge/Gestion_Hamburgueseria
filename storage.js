@@ -93,20 +93,26 @@ const extraIngredients = {
 const extras = {
     fries: {
         price: 200,
+        alt: 'Patatas fritas'
     },
     salad: {
         price: 150,
+        alt: 'Ensalada'
     },
-    onionrings: {
-        price: 250,  
+    rings: {
+        price: 250, 
+        alt: 'Aros de cebolla' 
     },
     water: {
         price: 100,
+        alt: 'Botella de agua'
     },
     coke: {
         price: 150,
+        alt: 'Coca Cola'
     },
     beer: {
         price: 200,
+        alt: 'Cerverza'
     }
 }

@@ -45,6 +45,7 @@ main{
 
 div.ovTicket{
   display: grid;
+  max-height: 100%;
   grid-template-columns: 1fr;
   grid-template-rows: 2rem 1fr 5rem;
   font-family: var(--font-sans);
