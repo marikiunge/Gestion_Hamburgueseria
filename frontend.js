@@ -3,9 +3,13 @@ ogIngredientsDisplay = document.getElementById('originalIngredients'),
 progressList = document.querySelector('#stateView table'),
 ticket = document.querySelector('.ovTicket table')
 
-// document.getElementById("orderNumber").innerText = String(order.number).padStart(3, "0");
 
 // KIOSK ACTIONS
+
+    function updateOrderNumber(){
+        document.getElementById("orderNumber").innerText = String(data.orderCount + 1).padStart(3, "0");
+    }
+
     function selectMain(which, pos) {
         data.currentOrder.mainProduct = which   
         
