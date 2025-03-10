@@ -15,6 +15,14 @@ ticket = document.querySelector('.ovTicket table')
 
         data.currentOrder.eliminatedIngredients = []
         data.currentOrder.extraIngredients = []
+        data.currentOrder.extras = {
+            fries: 0,
+            salad: 0,
+            rings: 0,
+            water: 0,
+            coke: 0,
+            beer: 0,
+        }
         renderIngredients(which)
         drawTicket()
     }
@@ -163,4 +171,4 @@ function drawTicket() {
         totalPrice += parseFloat(td.innerText)
     })
     document.querySelector('.billPrice span').innerText = totalPrice.toFixed(2)
-}
+}   
