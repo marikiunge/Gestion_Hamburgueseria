@@ -164,3 +164,26 @@ function drawTicket() {
     })
     document.querySelector('.billPrice span').innerText = totalPrice.toFixed(2)
 }
+
+function clearSelections(){
+    // Main product
+    let mainCourses = document.querySelectorAll('.ovProduct div')
+    mainCourses.forEach(div => div.className = '');
+
+    // Base ingredients
+    ogIngredientsDisplay.innerHTML = ''
+
+    // Extra ingredients
+    document.querySelectorAll('#additionalIngredients img').forEach (
+        img => img.classList.remove('selected')
+    )
+
+    // Steppers
+    document.querySelectorAll('.stepper').forEach(stepper => {
+        stepper.querySelector('p').innerText = 0
+    })
+
+    // Ticket
+    drawTicket()
+
+}
