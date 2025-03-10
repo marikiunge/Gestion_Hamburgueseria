@@ -204,7 +204,7 @@ function clearSelections(){
 
 function drawPickUp(order){
     let object = data.orderHistory[order]
-
+    console.log(object.id)
     // Order number
         pvPanel.innerHTML = ''
         let p = document.createElement('p')

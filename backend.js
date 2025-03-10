@@ -86,11 +86,12 @@ const timer = {
 
 function pickUpOrder(order){
     let index = timer.activeTimers.findIndex(array => array[0] == order);
+    if (index !== -1){
     timer.activeTimers.splice(index, 1);
     drawPickUp(order)
     timer.draw();
     storage.writeTimers()
-    
+    }
 }
 
 function Order() { 
@@ -114,8 +115,10 @@ const storage = {
         let receivedData = JSON.parse(localStorage.getItem('data'));
         if (receivedData == null) {
             data.orderCount = 0
+            data.orderHistory = []
         } else {
             data.orderCount = receivedData.orderCount;
+            data.orderHistory = receivedData.orderHistory;
         }
     },
 
