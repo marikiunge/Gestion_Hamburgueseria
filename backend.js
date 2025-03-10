@@ -5,6 +5,7 @@ const data = {
 
     newOrder() {
         data.currentOrder = new Order()
+        updateOrderNumber()
     },
 
     makeOrder() {
