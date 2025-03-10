@@ -4,8 +4,17 @@ const data = {
     orderHistory: [],
 
     newOrder() {
-        data.orderCount++
         data.currentOrder = new Order()
+    },
+
+    makeOrder() {
+        if(data.currentOrder.mainProduct == null) return
+        let order = structuredClone(data.currentOrder)
+        data.orderHistory.push(order)
+        data.orderCount++
+        data.newOrder()
+        drawTicket()
+        clearSelections()
     }
 }
 
