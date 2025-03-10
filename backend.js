@@ -28,6 +28,7 @@ const timer = {
     start(order, time){
         timer.activeTimers.push([order, time])
         timer.draw()
+        storage.writeTimers()
     },
 
     draw() {
@@ -78,7 +79,9 @@ const timer = {
             if (array[1] > 0) array[1] = array[1] - 1
         });
         timer.draw()
+        storage.writeTimers()
     }
+
 }
 
 function pickUpOrder(order){
@@ -86,6 +89,8 @@ function pickUpOrder(order){
     timer.activeTimers.splice(index, 1);
     drawPickUp(order)
     timer.draw();
+    storage.writeTimers()
+    
 }
 
 function Order() { 
@@ -116,6 +121,17 @@ const storage = {
 
     write() {
         localStorage.setItem('data', JSON.stringify(data));
+    },
+
+    writeTimers() {
+        localStorage.setItem('timers', JSON.stringify(timer.activeTimers));
+    },
+
+    readTimers() {
+        let receivedTimers = JSON.parse(localStorage.getItem('timers'));
+        if (receivedTimers !== null) {
+            timer.activeTimers = receivedTimers
+        }
     }
 }
 
@@ -123,4 +139,6 @@ window.onload = function() {
     storage.read()
     data.newOrder()
     setInterval(timer.tick, 1000)
+    storage.readTimers()
+    timer.draw()
 };
