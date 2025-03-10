@@ -13,10 +13,10 @@ const data = {
         let order = structuredClone(data.currentOrder)
         data.orderHistory.push(order)
         timer.start(data.orderCount, timer.getOrderTimer())
-        data.newOrder()
         drawTicket()
         clearSelections()
         data.orderCount++
+        data.newOrder()
     }
 }
 
@@ -37,14 +37,14 @@ const timer = {
 
             tdOrder.innerText = String(array[0] + 1).padStart(3, '0')
 
-            if(array[1] != 0) {
+            if(array[1] > 0) {
                 mins = Math.floor(array[1]/60)
                 secs = String(Math.floor(array[1] % 60)).padStart(2, '0')
                 tdTime.innerText = mins + ':' + secs
             } else {
                 let button = document.createElement('button')
                 button.textContent = 'Recoger'
-                button.onclick = pickUpOrder(array[0])
+                button.onclick = function () { pickUpOrder(array[0]) }
                 tdTime.appendChild(button)
             }
 
@@ -80,7 +80,9 @@ const timer = {
 }
 
 function pickUpOrder(order){
-
+    let index = timer.activeTimers.findIndex(array => array[0] == order);
+    timer.activeTimers.splice(index, 1);
+    timer.draw();
 }
 
 function Order() { 

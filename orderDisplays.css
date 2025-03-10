@@ -1,56 +1,156 @@
 div#stateView, div#pickUpView{
-    padding: 8px;
+  padding: 8px;
 }
 
 div#stateView{
-    table{
-        width: 100%;
-        font-family: var(--font-sans);
-        font-size: 2rem;
-        font-weight: 500;
-        margin-top: 1rem;
-        border: none;
-        border-collapse: collapse;
-        
-        tr.ready{
-            background-color: var(--color-primary-lightest);
-            border-radius: 4px;
-        }
-
-        td{
-            padding: 0.125rem 2rem;
-            border: none;
-            
-            &:last-child{
-                text-align: right;
-            }
-        }
-
-        button{
-            border: none;
-            background-color: var(--color-primary);
-            font-family: var(--font-sans);
-            font-size: 1.125rem;
-            font-weight: 600;
-            padding: 0.3rem 1rem;
-            margin-bottom: 8px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: color 0.1s, background-color 0.1s;
-
-            &:hover{
-                background-color: var(--color-primary-darker);
-                color: var(--color-primary);
-            }
-        }
+  table{
+    width: 100%;
+    font-family: var(--font-sans);
+    font-size: 2rem;
+    font-weight: 500;
+    margin-top: 1rem;
+    border: none;
+    border-collapse: collapse;
+    
+    tr.ready{
+      background-color: var(--color-primary-lightest);
+      border-radius: 4px;
     }
+
+    td{
+      padding: 0.125rem 2rem;
+      border: none;
+      
+      &:last-child{
+        text-align: right;
+      }
+    }
+
+    button{
+      border: none;
+      background-color: var(--color-primary);
+      font-family: var(--font-sans);
+      font-size: 1.125rem;
+      font-weight: 600;
+      padding: 0.3rem 1rem;
+      margin-bottom: 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: color 0.1s, background-color 0.1s;
+
+      &:hover{
+        background-color: var(--color-primary-darker);
+        color: var(--color-primary);
+      }
+    }
+  }
 }
 
 div.displayTitle{
-    background-color: var(--color-primary);
-    font-family: var(--font-display);
+  background-color: var(--color-primary);
+  font-family: var(--font-display);
+  text-align: center;
+  padding: 1rem;
+  border-radius: 4px;
+  text-shadow: 1px 2px 0 white;
+}
+
+
+div#pickUpView{
+  font-family: var(--font-sans);
+
+  img { object-fit: contain; }
+
+  .pvFull{
+    height: calc(100% - 3.75rem);
+    overflow-y: scroll;
+    padding: 0 0.5rem;
+  }
+
+  .pvOrder{
+    font-size: 1.5rem;
+    font-weight: 600;
     text-align: center;
-    padding: 1rem;
-    border-radius: 4px;
-    text-shadow: 1px 2px 0 white;
+    margin: 0.6rem 0;
+  }
+
+  .pvMain{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    .pvMainImg{
+      width: 60px;
+      height: 60px;
+      margin-right: 0.5rem;
+    }
+
+    > div{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      > div{
+        display: flex;
+        gap: 8px;
+      }
+    }
+
+    .pvMainPrice{
+      text-align: right;
+      margin-top: -2rem;
+      font-size: 1.5rem;
+    }
+
+    img{
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  table{
+    width: 100%;
+
+    img{
+      width: 14px;
+    }
+
+    td{
+      vertical-align: middle;
+      &:first-child{
+        text-align: center;
+      }
+      &:last-child{
+        text-align: right;
+      }
+    }
+  }
+
+  .pvPrice{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    align-items: center;
+    margin: 0 2rem;
+    
+    button{
+      border: none;
+      background-color: var(--color-primary);
+      font-family: var(--font-sans);
+      font-size: 1.125rem;
+      font-weight: 600;
+      padding: 0.3rem 1rem;
+      border-radius: 4px;
+      width: 7rem;
+      cursor: pointer;
+      transition: color 0.1s, background-color 0.1s;
+
+      &:hover{
+        background-color: var(--color-primary-darker);
+        color: var(--color-primary);
+    }
+  }
+}
+
+
 }
