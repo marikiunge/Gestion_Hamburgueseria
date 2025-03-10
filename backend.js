@@ -25,21 +25,33 @@ const timer = {
 
     start(order, time){
         timer.activeTimers.push([order, time])
+        timer.draw()
+    },
 
-        let tr = document.createElement('tr')
-        let tdOrder = document.createElement('td')
-        let tdTime = document.createElement('td')
+    draw() {
+        progressList.innerHTML = ''
+        timer.activeTimers.forEach(array => {
+            let tr = document.createElement('tr')
+            let tdOrder = document.createElement('td')
+            let tdTime = document.createElement('td')
 
-        console.log(order)
-        tdOrder.innerText = String(order + 1).padStart(3, '0')
+            tdOrder.innerText = String(array[0] + 1).padStart(3, '0')
 
-        mins = Math.floor(time/60)
-        secs = Math.floor(time % 60)
-        tdTime.innerText = mins + ':' + secs
+            if(array[1] != 0) {
+                mins = Math.floor(array[1]/60)
+                secs = String(Math.floor(array[1] % 60)).padStart(2, '0')
+                tdTime.innerText = mins + ':' + secs
+            } else {
+                let button = document.createElement('button')
+                button.textContent = 'Recoger'
+                button.onclick = pickUpOrder(array[0])
+                tdTime.appendChild(button)
+            }
 
-        tr.appendChild(tdOrder)
-        tr.appendChild(tdTime)
-        progressList.appendChild(tr)
+            tr.appendChild(tdOrder)
+            tr.appendChild(tdTime)
+            progressList.appendChild(tr)
+        })
     },
 
     getOrderTimer() {
@@ -56,12 +68,19 @@ const timer = {
         for (let i=0; i<extras; i++){
             timer += Math.random() * 10 + 5
         }
-        return timer
+        return Math.floor(timer)
     },
 
     tick() {
-
+        timer.activeTimers.forEach(array => {
+            if (array[1] > 0) array[1] = array[1] - 1
+        });
+        timer.draw()
     }
+}
+
+function pickUpOrder(order){
+
 }
 
 function Order() { 
